@@ -13,8 +13,8 @@ const displayVideo =(videos)=>{
     div.innerHTML=`
    <div class="card bg-base-100 shadow-sm">
             <figure class="relative">
-              <img
-                src="https://i.ibb.co/QPNzYVy/moonlight.jpg"
+              <img class="w-full h-[200px] object-cover"
+                src="${show.thumbnail}"
                 alt="" />
                 <span class="text-white bg-black px-2 py-1 rounded-lg absolute bottom-2 right-2">3hrs 56 min ago</span>
             </figure>
@@ -23,15 +23,15 @@ const displayVideo =(videos)=>{
                 <div>
                     <div class="avatar p-0">
                         <div class="ring-primary ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
-                          <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                          <img src="${show.authors[0].profile_picture}" />
                         </div>
                       </div>
                 </div>
 
                   <div>
-                    <h2 class="font-bold">Building a Winning UX Strategy <br>Using the Kano Model</h2>
-                    <p class="text-gray-400 flex gap-2">Awlad Hossain <img class="w-6" src="https://img.icons8.com/?size=48&id=98A4yZTt9abw&format=png" alt=""> </p>
-                    <p class="text-gray-400">91K views</p>
+                    <h2 class="font-bold">${show.title}</h2>
+                    <p class="text-gray-400 flex gap-2">${show.video_id} <img class="w-6" src="https://img.icons8.com/?size=48&id=98A4yZTt9abw&format=png" alt=""> </p>
+                    <p class="text-gray-400">${show.others.views}</p>
 
                   </div>
             </div>
