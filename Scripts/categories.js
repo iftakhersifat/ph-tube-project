@@ -11,7 +11,7 @@ const displayCategories=(items)=>{
     const putCategories = document.getElementById("categories-container");
     const div = document.createElement("div");
     div.innerHTML=`
-    <button class="btn btn-soft">${cat.categories}</button>
+    <button class="btn btn-soft hover:bg-red-500 hover:text-white">${cat.categories}</button>
     `
     putCategories.appendChild(div);
     }
