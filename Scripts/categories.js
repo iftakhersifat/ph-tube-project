@@ -1,3 +1,4 @@
+// p1
 const addCategories =()=>{
     fetch("https://openapi.programming-hero.com/api/phero-tube/categories")
     .then(res=>res.json())
@@ -15,6 +16,7 @@ const loadCategoryVideos = (id) => {
       .then((data) =>displayVideo(data.category))
      }
 
+// p1
 const displayBar=(bar)=>{
     for(const cat of bar){
         console.log(cat);
@@ -29,15 +31,29 @@ const displayBar=(bar)=>{
     }
 }
 
+// p2
 const videoLoad = ()=>{
     fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
     .then(response=>response.json())
     .then(dataAll=>displayVideo(dataAll.videos))
 }
+// p2
 const displayVideo =(videos)=>{
     const videoShow =document.getElementById("video-container");
     // for id
     videoShow.innerHTML ="";
+
+    // if videos zero
+    if(videos.length==0){
+      videoShow.innerHTML =`
+      <div class="col-span-full flex flex-col items-center text-center py-10 ">
+            <img src="assets/Icon.png" alt="">
+            <h2 class="text-2xl font-bold">Oops!! Sorry, There is no content here</h2>
+           </div>
+      `
+      return;
+    }
+    
     for(let show of videos){
         console.log(show);
 
