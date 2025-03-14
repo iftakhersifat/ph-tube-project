@@ -1,3 +1,13 @@
+const removeActiveClass = () => {
+  const removeClass = document.getElementsByClassName("active");
+
+  // Convert HTMLCollection to an array
+  Array.from(removeClass).forEach((btn) => {
+    btn.classList.remove("active", "bg-red-500", "text-white");
+  });
+};
+
+
 // p1
 const addCategories =()=>{
   fetch("https://openapi.programming-hero.com/api/phero-tube/categories")
@@ -14,8 +24,9 @@ const loadCategoryVideos = (id) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) =>{
+      removeActiveClass();
       const clickedButton =document.getElementById(`${id}`)
-      clickedButton.classList.add("bg-red-500", "text-white")
+      clickedButton.classList.add("active", "bg-red-500", "text-white")
       console.log(clickedButton)
       displayVideo(data.category)})
    }
